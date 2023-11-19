@@ -1,0 +1,29 @@
+{
+  "name": "oop-with-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/metaroonlabs/simple-node-js-api-ts.git",
+  "author": "Nawodya Ishan <nawodyain@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "scripts": {
+    "start": "ts-node src/index.ts --watch",
+    "build": "tsc",
+    "serve": "node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.10",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "pnpm": {
+    "fetch-retries": 2,
+    "fetch-timeout": 30000,
+    "strict-peer-dependencies": false,
+    "save-exact": true
+  },
+  "engines": {
+    "pnpm": ">=8.0.0"
+  }
+}
