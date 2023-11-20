@@ -1,42 +1,23 @@
-import * as console from "console";
+export class Player {
+    name: string
+    health: number
+    level: number
 
-export abstract class Player {
-    static playerCount: number = 0
-    name: string | undefined
-    crush: Player | undefined
-    speed: number | undefined
-    isInvincible: boolean | undefined
-    protected _health: number | undefined;
-
-    constructor(health: number) {
-        Player.playerCount++
-        console.log(`Current PLayer Count = ${Player.playerCount}`)
-        this._health = health
+    constructor(nameValue: string, heathValue: number, levelValue: number) {
+        this.name = nameValue;
+        this.health = heathValue;
+        this.level = levelValue;
     }
 
-    getHealth(): number | undefined {
-        if (this._health === undefined) {
-            console.log(`Health is undefined in ${this.name}`)
-            return
-        }
-        return this._health;
+    attack() {
+        console.log(`${this.name} is attacking!`)
     }
 
-    setHealth(value: number) {
-        if (value < 0) {
-            console.log("Please provide valid range")
-            return
-        }
-        this._health = value;
+    defend() {
+        console.log(`${this.name} is defending!`)
     }
 
     greet() {
-        console.log("Hello World")
+        return `Hello, I am ${this.name}!`
     }
-
-    move() {
-        console.log("Player is moving")
-    }
-
-    abstract attack(): void
 }
