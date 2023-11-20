@@ -1,7 +1,7 @@
 export class Player {
-    name: string
+    readonly name: string
     health: number
-    level: number
+    protected level: number
 
     constructor(nameValue: string, heathValue: number, levelValue: number) {
         this.name = nameValue;
