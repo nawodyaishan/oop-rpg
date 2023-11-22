@@ -1,23 +1,23 @@
 export class Player {
-    readonly name: string
-    health: number
-    protected level: number
 
-    constructor(nameValue: string, heathValue: number, levelValue: number) {
-        this.name = nameValue;
-        this.health = heathValue;
-        this.level = levelValue;
+    static playerCount: number = 0
+
+    // Parameter based constructor
+    constructor(protected name: string, public health: number, public level: number) {
+        Player.playerCount += 1
     }
 
-    attack() {
-        console.log(`${this.name} is attacking!`)
+    public battle() {
+        this.attack()
+        this.defend()
     }
 
-    defend() {
-        console.log(`${this.name} is defending!`)
+    // Methods
+    protected attack() {
+        console.log(`${this.name} is attacking`)
     }
 
-    greet() {
-        return `Hello, I am ${this.name}!`
+    protected defend() {
+        console.log(`${this.name} is defending`)
     }
 }

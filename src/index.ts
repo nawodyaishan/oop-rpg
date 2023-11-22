@@ -1,18 +1,33 @@
 import {Player} from "./models/Player";
+import {Knight} from "./models/Knight";
+import {Archer} from "./models/Archer";
 
 const main = () => {
-    // Creating class instance with constructor
-    const archer = new Player("Archer", 300, 3)
+    // Creating Instances
+    const knightOne: Player = new Player("St John", 100, 2);
 
-    // Manipulating inner state
-    archer.name = "Knight"
-    archer.level = 5
-    archer.health = 500
+    knightOne.battle()
+    console.log(knightOne.health)
+    console.log(knightOne.level)
 
-    // Main actions
-    archer.defend()
-    archer.attack()
-    console.log(archer.greet())
+    const ArcherOne: Player = new Player("Daniel", 80, 3);
+
+    ArcherOne.battle()
+    console.log(ArcherOne.health)
+    console.log(ArcherOne.level)
+
+    const knightTwo = new Knight("paul", 100, 3, 100)
+    knightTwo.battle()
+
+    const archerTwo = new Archer("Catherina", 900, 1, 150)
+    archerTwo.battle()
+    archerTwo.shootArrow()
+
+    const knightThree = knightTwo
+    knightThree.battle()
+
+    console.log("Total Player Count", Player.playerCount)
+    console.log("Total Archer Count", Archer.archerCount)
 }
 
 main()

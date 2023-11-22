@@ -1,14 +1,16 @@
 import {Player} from "./Player";
 
 export class Knight extends Player {
-    protected knightArmor: number;
-
-    constructor(name: string, health: number, level: number, knightArmor: number) {
+    constructor(name: string, health: number, level: number, public armour: number) {
         super(name, health, level);
-        this.knightArmor = knightArmor;
     }
 
-    public defend(): void {
-        console.log(`${this.name} defends with knight armor rating: ${this.knightArmor} and level - ${this.level}}`);
+    battle() {
+        this.attack()
+        super.defend()
+    }
+
+    protected attack() {
+        console.log(`${this.name} is attacking with ${this.armour} armour`)
     }
 }
