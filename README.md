@@ -94,7 +94,8 @@ pnpm run serve
 #### UML Diagram
 
 Refer to the provided UML diagram for a visual representation of the relationships between classes and interfaces.
-![image](https://github.com/nawodyaishan/oop-rpg/assets/50957846/fd05b836-9441-4f23-b5c7-e8bd4e808a72)
+![uml](https://github.com/nawodyaishan/oop-rpg/assets/50957846/fdcff262-5aae-4d06-ad0a-e361bfa60d27)
+
 
 
 #### Benefits of OOP in This Project
