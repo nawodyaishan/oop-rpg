@@ -1,16 +1,13 @@
 import {Player} from "./Player";
+import {Hero} from "../interfaces/Hero";
+import console from "console";
 
-export class Archer extends Player {
-    static archerCount: number = 0
-    private readonly range: number
-
-    constructor(name: string, health: number, level: number, range: number) {
+export class Archer extends Player implements Hero {
+    constructor(name: string, health: number, level: number) {
         super(name, health, level);
-        this.range = range
-        Archer.archerCount += 1
     }
 
-    public shootArrow() {
-        console.log(`${this.name} shoots arrows up to ${this.range} range`)
+    performHeroicAction(): void {
+        console.log(`t${this.name} performs heroic action`)
     }
 }

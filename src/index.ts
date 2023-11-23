@@ -1,33 +1,43 @@
-import {Player} from "./models/Player";
 import {Knight} from "./models/Knight";
+import {Witch} from "./models/Witch";
 import {Archer} from "./models/Archer";
+import {Priest} from "./models/Priest";
+import {GameSession} from "./models/GameSession";
 
 const main = () => {
+    // Creating Game Session
+    const gameSession: GameSession = GameSession.getInstance()
+
     // Creating Instances
-    const knightOne: Player = new Player("St John", 100, 2);
+    const arthur = new Knight("Arthur", 100, 5, 40);
+    const morgana = new Witch("Morgana", 85, 5);
+    const legolas = new Archer("Legolas", 95, 4);
+    const gandalf = new Priest("Gandalf", 110, 6);
 
-    knightOne.battle()
-    console.log(knightOne.health)
-    console.log(knightOne.level)
+    // Game Session
+    gameSession.addPlayer(arthur)
+    gameSession.addPlayer(morgana)
+    gameSession.addPlayer(legolas)
+    gameSession.addPlayer(gandalf)
 
-    const ArcherOne: Player = new Player("Daniel", 80, 3);
+    //View players inside the Game Session
+    gameSession.viewCurrentSessionPlayers()
 
-    ArcherOne.battle()
-    console.log(ArcherOne.health)
-    console.log(ArcherOne.level)
+    // Starting the game
+    gameSession.startGame();
 
-    const knightTwo = new Knight("paul", 100, 3, 100)
-    knightTwo.battle()
+    arthur.performHeroicAction()
+    morgana.performEvilDeed()
+    legolas.performHeroicAction()
+    gandalf.fight()
+    gandalf.heal()
 
-    const archerTwo = new Archer("Catherina", 900, 1, 150)
-    archerTwo.battle()
-    archerTwo.shootArrow()
+    // Managing
+    gameSession.manageGame()
 
-    const knightThree = knightTwo
-    knightThree.battle()
+    gameSession.endGame()
 
-    console.log("Total Player Count", Player.playerCount)
-    console.log("Total Archer Count", Archer.archerCount)
+    gameSession.manageGame()
 }
 
 main()

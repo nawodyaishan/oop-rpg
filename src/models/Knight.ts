@@ -1,16 +1,17 @@
 import {Player} from "./Player";
+import {Hero} from "../interfaces/Hero";
+import * as console from "console";
 
-export class Knight extends Player {
+export class Knight extends Player implements Hero {
     constructor(name: string, health: number, level: number, public armour: number) {
         super(name, health, level);
     }
 
-    battle() {
-        this.attack()
-        super.defend()
+    makeSound() {
+        console.log(`${this.name} fights with a sword!`)
     }
 
-    protected attack() {
-        console.log(`${this.name} is attacking with ${this.armour} armour`)
+    performHeroicAction(): void {
+        console.log(`t${this.name} performs heroic action`)
     }
 }
